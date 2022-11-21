@@ -1,0 +1,63 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+header,
+main,
+section,
+.company-images {
+    width: min(100%, f.rem(1440));
+    margin: 0 auto f.rem(100);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--d-grayish-blue);
+}
+
+p {
+    color: var(--grayish-blue);
+    font-size: f.rem(18);
+}
+
+
+.fw-bold {
+    font-weight: 600;
+}
+
+.buttons {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: f.rem(16);
+    width: min(90%, 500px);
+
+    button {
+        color: whitesmoke;
+        width: 100%;
+        padding: f.rem(16);
+        border-radius: 50px;
+    }
+
+    .dl-for-ios {
+        background-color: var(--strong-cyan);
+        border-bottom: var(--strong-cyan-bb);
+
+        &:hover {
+            background-color: var(--strong-cyan-hover);
+        }
+    }
+
+    .dl-for-mac {
+        background-color: var(--light-blue);
+        border-bottom: var(--light-blue-bb);
+
+        &:hover {
+            background-color: var(--light-blue-hover);
+        }
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        flex-direction: row;
+    }
+}

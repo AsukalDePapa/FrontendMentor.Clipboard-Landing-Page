@@ -1,0 +1,50 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+header {
+    // display
+    // display: none;
+    position: relative;
+    padding-block: f.rem(100);
+
+    background-image: url(../images/bg-header-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @include bp.breakpointMin(medium-screen) {
+        background-image: url(../images/bg-header-desktop.png);
+    }
+}
+
+.header {
+    // remove comments later
+    display: grid;
+    place-items: center;
+
+    .logo {
+        margin-bottom: f.rem(64);
+    }
+
+    .texts {
+        width: min(100%, f.rem(600));
+        margin-bottom: f.rem(48);
+
+        h2 {
+            padding-inline: f.rem(16);
+            font-size: f.rem(32);
+            margin-bottom: f.rem(16);
+        }
+
+        p {
+            padding-inline: f.rem(24);
+            font-size: f.rem(16);
+        }
+
+        @include bp.breakpointMin(medium-screen) {
+            h2 {
+                font-size: f.rem(34);
+            }
+        }
+    }
+}
+

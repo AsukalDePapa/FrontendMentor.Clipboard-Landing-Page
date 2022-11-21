@@ -1,0 +1,177 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+main {
+    // remove display later
+    // display: none;
+    padding-inline: f.rem(24);
+}
+
+section.main-head {
+    width: min(100%, f.rem(700));
+
+    h1 {
+        padding-inline: f.rem(24);
+        margin-bottom: f.rem(24);
+    }
+
+    p {
+        font-size: f.rem(18);
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        h1 {
+            font-size: f.rem(36);
+        }
+    }
+}
+
+// FEATURES - SECTION
+section.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+
+    .img {
+        margin-bottom: f.rem(48);
+    }
+
+    article {
+        h3 {
+            font-size: f.rem(24);
+            margin-bottom: f.rem(16);
+        }
+
+        p {
+            padding-inline: f.rem(16);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: f.rem(64);
+        }
+    }
+
+    @include bp.breakpointMin(large-screen) {
+        flex-direction: row;
+        gap: f.rem(64);
+
+        article {
+            text-align: left;
+            p {
+                padding-left: 0;
+                // padding-right: f.rem(200);
+            }
+        }
+    }
+}
+
+// CLIPBOARD - SECTION
+section.clipboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .head {
+        width: min(100%, f.rem(800));
+        margin-bottom: f.rem(64);
+
+        h3 {
+            padding-inline: f.rem(48);
+            font-size: f.rem(24);
+            margin-bottom: f.rem(16);
+        }
+
+        p {
+            padding-inline: f.rem(40);
+        }
+
+        @include bp.breakpointMin(large-screen) {
+            h3 {
+                font-size: f.rem(36);
+            }
+        }
+    }
+
+    .img {
+        margin-inline: auto;
+    }
+}
+
+// WORFLOW - SECTION
+section.workflow {
+
+    .head {
+        margin-bottom: f.rem(64);
+
+        h2 {
+            font-size: f.rem(32);
+            padding-inline: f.rem(32);
+            margin-bottom: f.rem(16);
+        }
+
+        p {
+            padding-inline: f.rem(40);
+        }
+    }
+
+    // workflow-feature
+    .workflow-feature {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: f.rem(32);
+
+        article {
+            width: min(100%, f.rem(400));
+
+            img {
+                margin-inline: auto;   
+                margin-bottom: f.rem(32);
+            }
+
+            h2 {
+                margin-bottom: f.rem(16);
+            }
+
+            p {
+                padding-inline: f.rem(16);
+            }
+        }
+
+        @include bp.breakpointMin(medium-screen) {
+            flex-direction: row;
+            align-items: unset;
+        }
+    }
+}
+
+// COMPANY-IMAGES
+.company-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: f.rem(64);
+
+    @include bp.breakpointMin(large-screen) {
+        flex-direction: row;
+    }
+}
+
+section.clipboard-for-devices {
+    width: min(100%, f.rem(710));
+
+    h2 {
+        font-size: f.rem(28);
+        padding-inline: f.rem(32);
+        margin-bottom: f.rem(16);
+    }
+
+    p {
+        padding-inline: f.rem(32);
+        margin-bottom: f.rem(64);
+    }
+}
