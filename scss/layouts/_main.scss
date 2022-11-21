@@ -38,6 +38,8 @@ section.feature {
     }
 
     article {
+        width: min(100%, f.rem(400));
+
         h3 {
             font-size: f.rem(24);
             margin-bottom: f.rem(16);

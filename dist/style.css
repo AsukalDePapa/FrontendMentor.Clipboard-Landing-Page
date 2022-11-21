@@ -143,6 +143,9 @@ section.feature {
 section.feature .img {
   margin-bottom: 3rem;
 }
+section.feature article {
+  width: min(100%, 25rem);
+}
 section.feature article h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
