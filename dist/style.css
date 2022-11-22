@@ -144,6 +144,7 @@ section.feature .img {
   margin-bottom: 3rem;
 }
 section.feature article {
+  margin-inline: auto;
   width: min(100%, 25rem);
 }
 section.feature article h3 {
@@ -162,6 +163,7 @@ section.feature article:not(:last-child) {
     gap: 4rem;
   }
   section.feature article {
+    margin-inline: 0;
     text-align: left;
   }
   section.feature article p {
@@ -235,15 +237,20 @@ section.workflow .workflow-feature article p {
 }
 
 .company-images {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
   gap: 4rem;
+}
+@media (min-width: 48.75em) {
+  .company-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
 }
 @media (min-width: 57.5em) {
   .company-images {
-    flex-direction: row;
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
